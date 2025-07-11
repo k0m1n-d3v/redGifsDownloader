@@ -33,7 +33,7 @@ def main():
     os.environ['DOWNLOAD_PATH'] = args.download_path
     
     print(f"🎯 URL: {args.url}")
-    print(f"📁 Ścieżka pobierania: {args.download_path}")
+    print(f"📁 Download path: {args.download_path}")
     
     browser_manager = BrowserManager()
     scraper = None
@@ -54,7 +54,7 @@ def main():
         downloader.download_videos(video_links, args.url)
         
     except Exception as e:
-        print(f"❌ Wystąpił błąd: {e}")
+        print(f"❌ An error occurred: {e}")
     finally:
         # Clean up browser
         browser_manager.close_browser()

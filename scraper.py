@@ -27,10 +27,10 @@ class RedGifsScraper:
                     seen_links.add(href)
             
             current_count = len(seen_links)
-            print(f"🔄 Scroll {i+1}/{MAX_SCROLLS} — linków: {current_count}")
+            print(f"🔄 Scroll {i+1}/{MAX_SCROLLS} — links: {current_count}")
             
             if current_count == previous_count:
-                print("⏹️ Brak nowych filmów — koniec scrollowania.")
+                print("⏹️ No new videos — stopping scroll.")
                 break
             
             if thumbnails:
@@ -40,7 +40,7 @@ class RedGifsScraper:
             
             time.sleep(SCROLL_DELAY)
         
-        print(f"✅ Zebrano {len(seen_links)} unikalnych linków do filmów.")
+        print(f"✅ Collected {len(seen_links)} unique video links.")
         return seen_links
     
     def extract_video_links(self, thumbnail_links):
@@ -48,7 +48,7 @@ class RedGifsScraper:
         video_links_to_download = set()
         
         for idx, link in enumerate(sorted(thumbnail_links), 1):
-            print(f"\n➡️ [{idx}/{len(thumbnail_links)}] Przetwarzam {link}")
+            print(f"\n➡️ [{idx}/{len(thumbnail_links)}] Processing {link}")
             self.driver.get(link)
             time.sleep(PAGE_LOAD_DELAY)
             
