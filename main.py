@@ -51,7 +51,7 @@ def main():
         video_links = scraper.extract_video_links(thumbnail_links)
         
         # Download videos
-        downloader.download_videos(video_links)
+        downloader.download_videos(video_links, args.url)
         
     except Exception as e:
         print(f"❌ Wystąpił błąd: {e}")

@@ -27,5 +27,5 @@ THUMBNAIL_SELECTOR = 'a.tile.isVideo[href*="/watch/"]'
 VIDEO_LINK_SELECTOR = 'a[href*="/watch/"]'
 
 # Environment-based configuration
-DEFAULT_START_URL = os.getenv('REDGIFS_URL', "https://www.redgifs.com/users/local-sperm-bank")
-DOWNLOAD_PATH = os.getenv('DOWNLOAD_PATH', '/downloads') 
+DEFAULT_START_URL = os.getenv('REDGIFS_URL', "")
+DOWNLOAD_PATH = os.getenv('DOWNLOAD_PATH', './downloads') 
