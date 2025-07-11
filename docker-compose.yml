@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  redgifs-downloader:
+    build: .
+    container_name: redgifs-downloader
+    environment:
+      - REDGIFS_URL=https://www.redgifs.com/users/local-sperm-bank
+      - DOWNLOAD_PATH=/downloads
+      - MAX_SCROLLS=200
+      - SCROLL_DELAY=2
+      - PAGE_LOAD_DELAY=3
+    volumes:
+      - ./downloads:/downloads
+    shm_size: 2gb
+    command: >
+      --url ${REDGIFS_URL:-https://www.redgifs.com/users/local-sperm-bank}
+      --download-path /downloads 
